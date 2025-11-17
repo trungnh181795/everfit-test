@@ -1,15 +1,42 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
+  /* Primary Colors */
+  --color-primary: #5a57cb;
+  --color-secondary: #a0a8b1;
+
+  /* Gray Scale */
+  --color-gray-100: #f3f5f8; /* Background - lightest */
+  --color-gray-200: #dfdfdf; /* Line/Border */
+  --color-gray-300: #c4c4c4; /* Muted */
+  --color-gray-400: #95a6b7; /* Light */
+  --color-gray-500: #919cad; /* Medium/Strong */
+  --color-gray-600: #728096; /* Text secondary */
+  --color-gray-700: #6a7988; /* Text dark */
+
+  /* Semantic Colors */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #6a7988;
 }
 
 @theme inline {
+  /* Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+
+  /* Gray Scale */
+  --color-gray-100: var(--color-gray-100);
+  --color-gray-200: var(--color-gray-200);
+  --color-gray-300: var(--color-gray-300);
+  --color-gray-400: var(--color-gray-400);
+  --color-gray-500: var(--color-gray-500);
+  --color-gray-600: var(--color-gray-600);
+  --color-gray-700: var(--color-gray-700);
+
+  /* Font Family */
+  --font-sans: var(--font-open-sans);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +49,9 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family:
+    var(--font-sans),
+    system-ui,
+    -apple-system,
+    sans-serif;
 }

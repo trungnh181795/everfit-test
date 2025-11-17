@@ -1,0 +1,50 @@
+[
+  {
+    "id": "session-1",
+    "name": "Push Day - Chest & Triceps",
+    "scheduledAt": "2025-11-18T00:00:00Z",
+    "order": 1,
+    "createdAt": "2025-11-10T08:00:00Z",
+    "updatedAt": "2025-11-10T08:00:00Z"
+  },
+  {
+    "id": "session-2",
+    "name": "Pull Day - Back & Biceps",
+    "scheduledAt": "2025-11-19T00:00:00Z",
+    "order": 1,
+    "createdAt": "2025-11-10T08:05:00Z",
+    "updatedAt": "2025-11-10T08:05:00Z"
+  },
+  {
+    "id": "session-3",
+    "name": "Leg Day",
+    "scheduledAt": "2025-11-20T00:00:00Z",
+    "order": 1,
+    "createdAt": "2025-11-10T08:10:00Z",
+    "updatedAt": "2025-11-10T08:10:00Z"
+  },
+  {
+    "id": "session-4",
+    "name": "Upper Body Strength",
+    "scheduledAt": "2025-11-21T00:00:00Z",
+    "order": 1,
+    "createdAt": "2025-11-10T08:15:00Z",
+    "updatedAt": "2025-11-10T08:15:00Z"
+  },
+  {
+    "id": "session-5",
+    "name": "Morning Cardio",
+    "scheduledAt": "2025-11-18T00:00:00Z",
+    "order": 2,
+    "createdAt": "2025-11-10T08:20:00Z",
+    "updatedAt": "2025-11-10T08:20:00Z"
+  },
+  {
+    "id": "session-6",
+    "name": "Full Body Workout",
+    "scheduledAt": null,
+    "order": 1,
+    "createdAt": "2025-11-15T10:00:00Z",
+    "updatedAt": "2025-11-15T10:00:00Z"
+  }
+]

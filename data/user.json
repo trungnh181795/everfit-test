@@ -1,0 +1,12 @@
+{
+  "id": "user-1",
+  "name": "John Doe",
+  "email": "john.doe@example.com",
+  "weightKg": 75.5,
+  "heightCm": 178,
+  "bodyFatPercent": 15.2,
+  "age": 28,
+  "gender": "male",
+  "createdAt": "2024-01-15T10:30:00Z",
+  "updatedAt": "2025-11-10T14:20:00Z"
+}

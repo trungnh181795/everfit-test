@@ -1,0 +1,93 @@
+[
+  {
+    "id": "se-1",
+    "sessionId": "session-1",
+    "exerciseId": "ex-1",
+    "createdAt": "2025-11-10T08:00:00Z",
+    "updatedAt": "2025-11-10T08:00:00Z"
+  },
+  {
+    "id": "se-2",
+    "sessionId": "session-1",
+    "exerciseId": "ex-5",
+    "createdAt": "2025-11-10T08:01:00Z",
+    "updatedAt": "2025-11-10T08:01:00Z"
+  },
+  {
+    "id": "se-3",
+    "sessionId": "session-1",
+    "exerciseId": "ex-8",
+    "createdAt": "2025-11-10T08:02:00Z",
+    "updatedAt": "2025-11-10T08:02:00Z"
+  },
+  {
+    "id": "se-4",
+    "sessionId": "session-2",
+    "exerciseId": "ex-3",
+    "createdAt": "2025-11-10T08:05:00Z",
+    "updatedAt": "2025-11-10T08:05:00Z"
+  },
+  {
+    "id": "se-5",
+    "sessionId": "session-2",
+    "exerciseId": "ex-4",
+    "createdAt": "2025-11-10T08:06:00Z",
+    "updatedAt": "2025-11-10T08:06:00Z"
+  },
+  {
+    "id": "se-6",
+    "sessionId": "session-2",
+    "exerciseId": "ex-6",
+    "createdAt": "2025-11-10T08:07:00Z",
+    "updatedAt": "2025-11-10T08:07:00Z"
+  },
+  {
+    "id": "se-7",
+    "sessionId": "session-3",
+    "exerciseId": "ex-2",
+    "createdAt": "2025-11-10T08:10:00Z",
+    "updatedAt": "2025-11-10T08:10:00Z"
+  },
+  {
+    "id": "se-8",
+    "sessionId": "session-3",
+    "exerciseId": "ex-7",
+    "createdAt": "2025-11-10T08:11:00Z",
+    "updatedAt": "2025-11-10T08:11:00Z"
+  },
+  {
+    "id": "se-9",
+    "sessionId": "session-4",
+    "exerciseId": "ex-1",
+    "createdAt": "2025-11-10T08:15:00Z",
+    "updatedAt": "2025-11-10T08:15:00Z"
+  },
+  {
+    "id": "se-10",
+    "sessionId": "session-4",
+    "exerciseId": "ex-4",
+    "createdAt": "2025-11-10T08:16:00Z",
+    "updatedAt": "2025-11-10T08:16:00Z"
+  },
+  {
+    "id": "se-11",
+    "sessionId": "session-6",
+    "exerciseId": "ex-2",
+    "createdAt": "2025-11-15T10:00:00Z",
+    "updatedAt": "2025-11-15T10:00:00Z"
+  },
+  {
+    "id": "se-12",
+    "sessionId": "session-6",
+    "exerciseId": "ex-1",
+    "createdAt": "2025-11-15T10:01:00Z",
+    "updatedAt": "2025-11-15T10:01:00Z"
+  },
+  {
+    "id": "se-13",
+    "sessionId": "session-6",
+    "exerciseId": "ex-4",
+    "createdAt": "2025-11-15T10:02:00Z",
+    "updatedAt": "2025-11-15T10:02:00Z"
+  }
+]

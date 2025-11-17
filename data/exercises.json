@@ -1,0 +1,98 @@
+[
+  {
+    "id": "ex-1",
+    "name": "Barbell Bench Press",
+    "categoryId": "cat-chest",
+    "description": "Classic chest exercise using a barbell on a flat bench",
+    "muscleGroups": ["chest", "triceps", "shoulders"],
+    "equipment": ["barbell", "bench"],
+    "imageUrl": "https://example.com/images/bench-press.jpg",
+    "videoUrl": "https://example.com/videos/bench-press.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-2",
+    "name": "Barbell Squat",
+    "categoryId": "cat-legs",
+    "description": "Fundamental lower body exercise targeting quads, glutes, and hamstrings",
+    "muscleGroups": ["quadriceps", "glutes", "hamstrings", "core"],
+    "equipment": ["barbell", "squat rack"],
+    "imageUrl": "https://example.com/images/squat.jpg",
+    "videoUrl": "https://example.com/videos/squat.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-3",
+    "name": "Deadlift",
+    "categoryId": "cat-back",
+    "description": "Full body compound movement focusing on posterior chain",
+    "muscleGroups": ["lower back", "glutes", "hamstrings", "traps", "forearms"],
+    "equipment": ["barbell"],
+    "imageUrl": "https://example.com/images/deadlift.jpg",
+    "videoUrl": "https://example.com/videos/deadlift.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-4",
+    "name": "Pull-ups",
+    "categoryId": "cat-back",
+    "description": "Bodyweight exercise for back and biceps",
+    "muscleGroups": ["lats", "biceps", "upper back"],
+    "equipment": ["pull-up bar"],
+    "imageUrl": "https://example.com/images/pullups.jpg",
+    "videoUrl": "https://example.com/videos/pullups.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-5",
+    "name": "Dumbbell Shoulder Press",
+    "categoryId": "cat-shoulders",
+    "description": "Overhead pressing movement for shoulder development",
+    "muscleGroups": ["shoulders", "triceps"],
+    "equipment": ["dumbbells", "bench"],
+    "imageUrl": "https://example.com/images/shoulder-press.jpg",
+    "videoUrl": "https://example.com/videos/shoulder-press.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-6",
+    "name": "Barbell Bicep Curl",
+    "categoryId": "cat-arms",
+    "description": "Isolation exercise for bicep development",
+    "muscleGroups": ["biceps"],
+    "equipment": ["barbell"],
+    "imageUrl": "https://example.com/images/bicep-curl.jpg",
+    "videoUrl": "https://example.com/videos/bicep-curl.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-7",
+    "name": "Leg Press",
+    "categoryId": "cat-legs",
+    "description": "Machine-based lower body exercise",
+    "muscleGroups": ["quadriceps", "glutes", "hamstrings"],
+    "equipment": ["leg press machine"],
+    "imageUrl": "https://example.com/images/leg-press.jpg",
+    "videoUrl": "https://example.com/videos/leg-press.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  },
+  {
+    "id": "ex-8",
+    "name": "Cable Tricep Pushdown",
+    "categoryId": "cat-arms",
+    "description": "Isolation exercise for triceps using cable machine",
+    "muscleGroups": ["triceps"],
+    "equipment": ["cable machine"],
+    "imageUrl": "https://example.com/images/tricep-pushdown.jpg",
+    "videoUrl": "https://example.com/videos/tricep-pushdown.mp4",
+    "createdAt": "2024-01-01T00:00:00Z",
+    "updatedAt": "2024-01-01T00:00:00Z"
+  }
+]

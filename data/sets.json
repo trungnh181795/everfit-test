@@ -1,0 +1,156 @@
+[
+  {
+    "id": "set-1",
+    "sessionExerciseId": "se-1",
+    "weight": 80,
+    "reps": 8,
+    "order": 1
+  },
+  {
+    "id": "set-2",
+    "sessionExerciseId": "se-1",
+    "weight": 80,
+    "reps": 7,
+    "order": 2
+  },
+  {
+    "id": "set-3",
+    "sessionExerciseId": "se-1",
+    "weight": 75,
+    "reps": 8,
+    "order": 3
+  },
+  {
+    "id": "set-4",
+    "sessionExerciseId": "se-2",
+    "weight": 25,
+    "reps": 10,
+    "order": 1
+  },
+  {
+    "id": "set-5",
+    "sessionExerciseId": "se-2",
+    "weight": 25,
+    "reps": 9,
+    "order": 2
+  },
+  {
+    "id": "set-6",
+    "sessionExerciseId": "se-3",
+    "weight": 35,
+    "reps": 12,
+    "order": 1
+  },
+  {
+    "id": "set-7",
+    "sessionExerciseId": "se-3",
+    "weight": 35,
+    "reps": 11,
+    "order": 2
+  },
+  {
+    "id": "set-8",
+    "sessionExerciseId": "se-3",
+    "weight": 35,
+    "reps": 10,
+    "order": 3
+  },
+  {
+    "id": "set-9",
+    "sessionExerciseId": "se-4",
+    "weight": 140,
+    "reps": 5,
+    "order": 1
+  },
+  {
+    "id": "set-10",
+    "sessionExerciseId": "se-4",
+    "weight": 140,
+    "reps": 5,
+    "order": 2
+  },
+  {
+    "id": "set-11",
+    "sessionExerciseId": "se-4",
+    "weight": 140,
+    "reps": 4,
+    "order": 3
+  },
+  {
+    "id": "set-12",
+    "sessionExerciseId": "se-5",
+    "weight": null,
+    "reps": 10,
+    "order": 1
+  },
+  {
+    "id": "set-13",
+    "sessionExerciseId": "se-5",
+    "weight": null,
+    "reps": 8,
+    "order": 2
+  },
+  {
+    "id": "set-14",
+    "sessionExerciseId": "se-5",
+    "weight": null,
+    "reps": 7,
+    "order": 3
+  },
+  {
+    "id": "set-15",
+    "sessionExerciseId": "se-6",
+    "weight": 30,
+    "reps": 10,
+    "order": 1
+  },
+  {
+    "id": "set-16",
+    "sessionExerciseId": "se-6",
+    "weight": 30,
+    "reps": 9,
+    "order": 2
+  },
+  {
+    "id": "set-17",
+    "sessionExerciseId": "se-7",
+    "weight": 100,
+    "reps": 10,
+    "order": 1
+  },
+  {
+    "id": "set-18",
+    "sessionExerciseId": "se-7",
+    "weight": 100,
+    "reps": 10,
+    "order": 2
+  },
+  {
+    "id": "set-19",
+    "sessionExerciseId": "se-7",
+    "weight": 100,
+    "reps": 8,
+    "order": 3
+  },
+  {
+    "id": "set-20",
+    "sessionExerciseId": "se-8",
+    "weight": 180,
+    "reps": 12,
+    "order": 1
+  },
+  {
+    "id": "set-21",
+    "sessionExerciseId": "se-8",
+    "weight": 180,
+    "reps": 12,
+    "order": 2
+  },
+  {
+    "id": "set-22",
+    "sessionExerciseId": "se-8",
+    "weight": 180,
+    "reps": 10,
+    "order": 3
+  }
+]
