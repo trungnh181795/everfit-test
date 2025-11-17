@@ -23,6 +23,8 @@ interface WorkoutSessionCardProps {
   className?: string
   index?: number
   onReorder?: (dragIndex: number, hoverIndex: number) => void
+  onSetTargetOrder?: (order: number) => void
+  isFromThisDay?: boolean
 }
 
 const WorkoutSessionCard = ({
@@ -30,6 +32,8 @@ const WorkoutSessionCard = ({
   className,
   index,
   onReorder,
+  onSetTargetOrder,
+  isFromThisDay = true,
 }: WorkoutSessionCardProps) => {
   const ref = useRef<HTMLDivElement>(null)
 
@@ -51,41 +55,50 @@ const WorkoutSessionCard = ({
         item: { session: WorkoutSessionSchema; index: number },
         monitor
       ) => {
-        if (!ref.current || !onReorder || index === undefined) {
+        if (!ref.current || index === undefined) {
           return
         }
 
-        const dragIndex = item.index
-        const hoverIndex = index
+        // Check if the dragged item is from a different day
+        const isDifferentDay = !isFromThisDay && item.session.id !== workoutSession.id
+        
+        if (isDifferentDay && onSetTargetOrder) {
+          // For cross-day drops, set the target order to this card's index
+          onSetTargetOrder(index)
+        } else if (onReorder && isFromThisDay) {
+          // For same-day reordering, use the existing logic
+          const dragIndex = item.index
+          const hoverIndex = index
 
-        if (dragIndex === hoverIndex) {
-          return
+          if (dragIndex === hoverIndex) {
+            return
+          }
+
+          const hoverBoundingRect = ref.current.getBoundingClientRect()
+          const hoverMiddleY =
+            (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
+          const clientOffset = monitor.getClientOffset()
+
+          if (!clientOffset) {
+            return
+          }
+
+          const hoverClientY = clientOffset.y - hoverBoundingRect.top
+
+          if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+            return
+          }
+
+          if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+            return
+          }
+
+          onReorder(dragIndex, hoverIndex)
+          item.index = hoverIndex
         }
-
-        const hoverBoundingRect = ref.current.getBoundingClientRect()
-        const hoverMiddleY =
-          (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2
-        const clientOffset = monitor.getClientOffset()
-
-        if (!clientOffset) {
-          return
-        }
-
-        const hoverClientY = clientOffset.y - hoverBoundingRect.top
-
-        if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
-          return
-        }
-
-        if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
-          return
-        }
-
-        onReorder(dragIndex, hoverIndex)
-        item.index = hoverIndex
       },
     }),
-    [index, onReorder]
+    [index, onReorder, onSetTargetOrder, isFromThisDay, workoutSession.id]
   )
 
   drag(drop(ref))

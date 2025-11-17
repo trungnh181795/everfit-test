@@ -21,7 +21,7 @@ interface DayColumnProps {
   sessions: WorkoutSessionSchema[]
   isToday?: boolean
   className?: string
-  onDropSession: (sessionId: string, targetDate: Date) => void
+  onDropSession: (sessionId: string, targetDate: Date, targetOrder: number) => void
   onReorderSession: (sessionId: string, newOrder: number) => void
   fullDate: Date
 }
@@ -39,7 +39,9 @@ const DayColumn = ({
   const [localSessions, setLocalSessions] = useState<WorkoutSessionSchema[]>(
     []
   )
+  const [targetOrder, setTargetOrder] = useState<number>(0)
 
+  // Since i'm not sure if we can use react-query to handle server state, let's do it this way for now
   useEffect(() => {
     setLocalSessions([...sessions].sort((a, b) => a.order - b.order))
   }, [sessions])
@@ -47,45 +49,50 @@ const DayColumn = ({
   const handleReorder = (dragIndex: number, hoverIndex: number) => {
     const reordered = [...localSessions]
     const [draggedItem] = reordered.splice(dragIndex, 1)
-    reordered.splice(hoverIndex, 0, draggedItem)
-    setLocalSessions(reordered)
+    if (draggedItem) {
+      reordered.splice(hoverIndex, 0, draggedItem)
+      setLocalSessions(reordered)
+    }
   }
 
   const handleDrop = async (item: { session: WorkoutSessionSchema }) => {
     const isInSameDay = sessions.some((s) => s.id === item.session.id)
-    
+
     if (isInSameDay) {
-      // Update order for each session
-      for (const [index, session] of localSessions.entries()) {
-        if (session.order !== index) {
-          try {
-            await fetch(`/api/workout-sessions?id=${session.id}`, {
-              method: 'PUT',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ order: index }),
-            })
-          } catch (error) {
-            console.error('Failed to update session order:', error)
-          }
+      // Update order for sessions in the same day
+      localSessions.filter(Boolean).forEach((session, index) => {
+        if (session && session.order !== index) {
+          onReorderSession(session.id, index)
         }
-      }
-      // Revalidate
-      window.location.reload()
+      })
     } else {
-      onDropSession(item.session.id, fullDate)
+      // Move session to new day with target order
+      onDropSession(item.session.id, fullDate, targetOrder)
     }
+
+    setTargetOrder(0)
   }
 
   const [{ isOver, draggedItem }, drop] = useDrop(
     () => ({
       accept: 'WORKOUT_SESSION',
       drop: handleDrop,
+      hover: (item: { session: WorkoutSessionSchema; index: number }) => {
+        const isFromThisDay = sessions.some((s) => s.id === item.session.id)
+        if (!isFromThisDay) {
+          // Default to end of list, but individual cards will override this
+          setTargetOrder(localSessions.length)
+        }
+      },
       collect: (monitor) => ({
         isOver: monitor.isOver(),
-        draggedItem: monitor.getItem() as { session: WorkoutSessionSchema; index: number } | null,
+        draggedItem: monitor.getItem() as {
+          session: WorkoutSessionSchema
+          index: number
+        } | null,
       }),
     }),
-    [handleDrop, localSessions, fullDate]
+    [handleDrop, localSessions, sessions]
   )
 
   return (
@@ -123,18 +130,35 @@ const DayColumn = ({
 
         {/* Sessions Body */}
         <div className="px-[7px] pb-2 flex flex-col gap-[5px] flex-1">
-          {localSessions.map((session, index) => (
-            <WorkoutSessionCard
-              key={session.id}
-              workoutSession={session}
-              index={index}
-              onReorder={handleReorder}
-            />
-          ))}
-          {isOver && draggedItem && !sessions.some((s) => s.id === draggedItem.session.id) && (
-            <div className="bg-white/40 border-2 border-dashed border-primary/50 rounded-md h-20 flex items-center justify-center">
-              <span className="text-xs text-gray-400">Drop here</span>
-            </div>
+          {localSessions.filter(Boolean).map((session, index) => {
+            const isFromThisDay = draggedItem
+              ? sessions.some((s) => s.id === draggedItem.session.id)
+              : true
+            
+            const showPlaceholderBefore = 
+              draggedItem && 
+              !isFromThisDay && 
+              targetOrder === index
+
+            return (
+              <div key={session.id}>
+                {showPlaceholderBefore && (
+                  <div className="h-0.5 bg-primary rounded-full mb-[5px]" />
+                )}
+                <WorkoutSessionCard
+                  workoutSession={session}
+                  index={index}
+                  onReorder={handleReorder}
+                  onSetTargetOrder={setTargetOrder}
+                  isFromThisDay={isFromThisDay}
+                />
+              </div>
+            )
+          })}
+          {draggedItem && 
+            !sessions.some((s) => s.id === draggedItem.session.id) &&
+            targetOrder === localSessions.length && (
+            <div className="h-0.5 bg-primary rounded-full" />
           )}
         </div>
       </div>

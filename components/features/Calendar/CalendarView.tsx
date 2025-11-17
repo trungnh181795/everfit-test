@@ -85,7 +85,11 @@ const CalendarView = ({ initialSessions }: CalendarViewProps) => {
     })
   }
 
-  const handleDropSession = (sessionId: string, targetDate: Date) => {
+  const handleDropSession = (
+    sessionId: string,
+    targetDate: Date,
+    targetOrder: number
+  ) => {
     setWorkoutSessions((prevSessions) => {
       return prevSessions.map((session) => {
         if (session.id === sessionId) {
@@ -94,6 +98,7 @@ const CalendarView = ({ initialSessions }: CalendarViewProps) => {
           return {
             ...session,
             scheduledAt: newScheduledAt.toISOString(),
+            order: targetOrder,
           }
         }
         return session
@@ -116,7 +121,7 @@ const CalendarView = ({ initialSessions }: CalendarViewProps) => {
   }
 
   return (
-    <div className="w-full h-full flex flex-col gap-3">
+    <div className="w-full min-h-full flex flex-col gap-3">
       <div className="w-full shrink-0">
         <WeekNavigator
           currentMonth={currentMonth}

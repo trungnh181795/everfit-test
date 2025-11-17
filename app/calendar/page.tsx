@@ -5,7 +5,7 @@ const CalendarPage = async () => {
   const sessions = await workoutSessionService.getAllWorkoutSessions()
 
   return (
-    <div className="container mx-auto px-6 py-8 bg-white h-full">
+    <div className="container mx-auto px-6 py-8 bg-white flex flex-1">
       <CalendarView initialSessions={sessions} />
     </div>
   )

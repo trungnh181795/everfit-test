@@ -27,7 +27,7 @@ export default async function RootLayout({
       <body className={`${openSans.variable} font-sans antialiased`}>
         <DndProvider>
           <Header userName={user.name} />
-          <main className="bg-white h-[calc(100vh-4rem)]">{children}</main>
+          <main className="bg-white min-h-[calc(100vh-4rem)] flex flex-col">{children}</main>
         </DndProvider>
       </body>
     </html>
